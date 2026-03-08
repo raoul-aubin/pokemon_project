@@ -64,6 +64,20 @@ public class PokemonResource {
                 .build();
     }
 
+    @GET
+    @Path("/search")
+    public List<PokemonDto> searchPokemons(@QueryParam("name") String name) {
+
+        if (name == null || name.isBlank()) {
+            return List.of();
+        }
+
+        return pokemonService.searchByName(name)
+                .stream()
+                .map(this::toDto)
+                .toList();
+    }
+
     @POST
     public Response createPokemon(PokemonRequest req, @Context SecurityContext sc) {
 

@@ -6,9 +6,9 @@ export class Pokemon {
     picture: string;
     types: string[];
     created: Date;
-  
+
     constructor(
-        name: string = 'Entrer un nom...',
+        name: string = 'Geben Sie den Name ein',
         hp: number = 100,
         cp: number = 10,
         picture: string = 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/xxx.png',

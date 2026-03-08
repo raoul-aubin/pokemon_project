@@ -12,19 +12,19 @@
               <table class="table table-striped">
                 <tbody>
                   <tr>
-                    <td>Nom</td>
+                    <td>Name</td>
                     <td><strong>{{ pokemon.name }}</strong></td>
                   </tr>
                   <tr>
-                    <td>Points de vie</td>
+                    <td>Lebenspunkt</td>
                     <td><strong>{{ pokemon.hp }}</strong></td>
                   </tr>
                   <tr>
-                    <td>Dégâts</td>
+                    <td>Schaden</td>
                     <td><strong>{{ pokemon.cp }}</strong></td>
                   </tr>
                   <tr>
-                    <td>Types</td>
+                    <td>Typen</td>
                     <td>
                       @for (type of pokemon.types; track $index) {
                         <span class="{{type | pokemonTypeColor}}">{{type}}</span>
@@ -32,14 +32,11 @@
                     </td>
                   </tr>
                   <tr>
-                    <td>Date de création</td>
+                    <td>Erstellungsdatum</td>
                     <td><em>{{ pokemon.created | date:"dd/MM/yyyy" }}</em></td>
                   </tr>
                 </tbody>
               </table>
-              <div>
-                <a (click)="goToPokemonList()" class="me-4 text-warning text-decoration-none">ZURÜCK</a>
-              </div>
             </div>
 
           </div>

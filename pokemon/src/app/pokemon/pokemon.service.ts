@@ -37,7 +37,7 @@ export class PokemonService {
       return of([]);
     }
 
-    return this.http.get<Pokemon[]>(`api/pokemons/?name=${term}`).pipe(
+    return this.http.get<Pokemon[]>(`http://localhost:8080/pokemon_backend/api/pokemons/search?name=${term}`).pipe(
       tap(response => this.log(response)),
       catchError(error => this.handleError(error, []))
     );

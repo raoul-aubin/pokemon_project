@@ -30,6 +30,15 @@ public class PokemonService {
                 .getResultList();
     }
 
+    public List<Pokemon> searchByName(String term) {
+        return em.createQuery(
+                        "SELECT p FROM Pokemon p WHERE LOWER(p.name) LIKE LOWER(:term)",
+                        Pokemon.class
+                )
+                .setParameter("term", "%" + term + "%")
+                .getResultList();
+    }
+
     @Transactional
     public Pokemon create(Pokemon pokemon) {
         // Owner must already be set by the resource (authenticated user)

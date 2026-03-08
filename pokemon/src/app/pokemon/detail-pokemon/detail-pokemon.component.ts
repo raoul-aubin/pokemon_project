@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import {Observable, switchMap} from 'rxjs';
 
 import { Pokemon } from '../pokemon';
@@ -24,7 +24,6 @@ export class DetailPokemonComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private router: Router,
     private pokemonService: PokemonService
   ) {}
 
@@ -34,10 +33,6 @@ export class DetailPokemonComponent implements OnInit {
         this.pokemonService.getPokemonById(+params.get('id')!)
       )
     );
-  }
-
-  goToPokemonList(): void {
-    this.router.navigate(['/pokemons']);
   }
 }
 

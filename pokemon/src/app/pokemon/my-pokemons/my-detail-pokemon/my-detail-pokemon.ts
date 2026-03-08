@@ -37,11 +37,7 @@ export class MyDetailPokemon implements OnInit {
 
   deletePokemon(pokemon: Pokemon): void {
     this.pokemonService.deletePokemonById(pokemon.id!)
-      .subscribe(() => this.goToPokemonList());
-  }
-
-  goToPokemonList(): void {
-    this.router.navigate(['/pokemons/my-pokemons']);
+      .subscribe(()=>this.router.navigate(['/pokemons/my-pokemons']));
   }
 
   goToEditPokemon(pokemon: Pokemon): void {
