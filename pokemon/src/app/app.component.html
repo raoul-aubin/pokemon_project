@@ -1,0 +1,60 @@
+<nav class="navbar bg-success mb-4">
+  <div class="container-fluid">
+
+    <!-- Titre centré -->
+    <div class="mx-auto">
+      <a class="navbar-brand mb-0 h1 text-white" routerLink="/pokemons">
+        Pokedex
+      </a>
+    </div>
+
+    <<div class="position-absolute end-0 me-3">
+
+    @if (!auth.isAuthenticated()) {
+      <a routerLink="/login" class="text-white fs-4">
+        🔐
+      </a>
+    }
+
+    @if (auth.isAuthenticated()) {
+
+      <div class="dropdown">
+        <a class="text-white fs-4 dropdown-toggle"
+           href="#"
+           role="button"
+           data-bs-toggle="dropdown">
+          👤
+        </a>
+
+        <ul class="dropdown-menu dropdown-menu-end p-3 fs-5" style="min-width: 220px;">
+        <li>
+            <a class="dropdown-item" routerLink="/account">
+              Mein Konto
+            </a>
+          </li>
+
+          <li>
+            <a class="dropdown-item" routerLink="/pokemons/my-pokemons">
+              Meine Pokemons
+            </a>
+          </li>
+
+          <li><hr class="dropdown-divider"></li>
+
+          <li>
+            <a class="dropdown-item" (click)="logout()">
+              Logout
+            </a>
+          </li>
+        </ul>
+
+      </div>
+
+    }
+
+  </div>
+
+  </div>
+</nav>
+
+<router-outlet></router-outlet>

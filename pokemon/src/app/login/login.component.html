@@ -1,0 +1,53 @@
+<div class="col-12 col-md-4 offset-md-4">
+  <div class="card">
+
+    <div class="card-body">
+      <div class="text-center">
+        <h5 class="card-title">Anmeldeseite</h5>
+        <p><em>Bitte melden Sie sich an.</em></p>
+      </div>
+
+      <form>
+        <div class="mb-3">
+          <label for="username" class="form-label">Benutzername</label>
+          <input
+            type="text"
+            id="username"
+            class="form-control"
+            [(ngModel)]="username"
+            name="username"
+            required
+          >
+        </div>
+
+        <div class="mb-3">
+          <label for="password" class="form-label">Passwort</label>
+          <input
+            type="password"
+            id="password"
+            class="form-control"
+            [(ngModel)]="password"
+            name="password"
+            required
+          >
+        </div>
+      </form>
+    </div>
+
+    <div class="text-center mb-3">
+      <button (click)="login()" class="btn btn-primary">
+        Anmelden
+      </button>
+    </div>
+
+    <div class="text-center mb-3">
+      <span>
+        Noch kein Konto?
+        <a routerLink="/register" class="text-decoration-none">
+          Hier registrieren
+        </a>
+      </span>
+    </div>
+
+  </div>
+</div>

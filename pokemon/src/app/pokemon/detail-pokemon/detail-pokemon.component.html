@@ -1,0 +1,56 @@
+@if (pokemon$ | async; as pokemon) {
+  <div>
+    <div class="col-12 col-md-8 offset-md-2">
+      <h2 class="text-center mb-4">{{ pokemon.name }}</h2>
+      <div class="card">
+        <div class="row">
+          <div class="col-2">
+            <img [src]="pokemon.picture" class="card-img" alt="Image">
+          </div>
+          <div class="col-10">
+            <div class="card-body">
+              <table class="table table-striped">
+                <tbody>
+                  <tr>
+                    <td>Nom</td>
+                    <td><strong>{{ pokemon.name }}</strong></td>
+                  </tr>
+                  <tr>
+                    <td>Points de vie</td>
+                    <td><strong>{{ pokemon.hp }}</strong></td>
+                  </tr>
+                  <tr>
+                    <td>Dégâts</td>
+                    <td><strong>{{ pokemon.cp }}</strong></td>
+                  </tr>
+                  <tr>
+                    <td>Types</td>
+                    <td>
+                      @for (type of pokemon.types; track $index) {
+                        <span class="{{type | pokemonTypeColor}}">{{type}}</span>
+                      }
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Date de création</td>
+                    <td><em>{{ pokemon.created | date:"dd/MM/yyyy" }}</em></td>
+                  </tr>
+                </tbody>
+              </table>
+              <div>
+                <a (click)="goToPokemonList()" class="me-4 text-warning text-decoration-none">ZURÜCK</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  @if (!pokemon) {
+    <h4 class="text-center">
+      <app-loader></app-loader>
+    </h4>
+  }
+
+}

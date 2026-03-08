@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="row row-cols-2 row-cols-md-3 g-4">
+    @for (pokemon of (pokemonList$ | async) ?? []; track pokemon.id) {
+      <div>
+        <div class="col">
+          <div (click)="goToPokemon(pokemon)" class="card" pkmnBorderCard>
+            <div class="row no-gutters">
+              <div class="col-4 col-lg-6">
+                <img [src]="pokemon.picture" class="card-img" alt="...">
+              </div>
+              <div class="col-8 col-lg-6">
+                <div class="card-body">
+                  <p class="card-title">{{pokemon.name}}</p>
+                  <p class="card-text"><small>{{pokemon.created | date}}</small></p>
+                  @for (type of pokemon.types; track $index) {
+                    <span class="{{type | pokemonTypeColor}}">
+                                            {{type}}
+                                        </span>
+                  }
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</div>
+
+<div class="fixed-bottom d-flex justify-content-end p-3">
+  <a routerLink="/pokemons/add" class="btn btn-danger btn-lg shadow">
+    +
+  </a>
+</div>

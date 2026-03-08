@@ -1,0 +1,67 @@
+<div class="col-12 col-md-4 offset-md-4">
+  <div class="card">
+
+    <div class="card-body">
+      <div class="text-center">
+        <h5 class="card-title">Registrierung</h5>
+        <p><em>Bitte erstellen Sie ein Konto.</em></p>
+      </div>
+
+      <form>
+
+        <div class="mb-3">
+          <label for="username" class="form-label">Benutzername</label>
+          <input
+            type="text"
+            id="username"
+            class="form-control"
+            [(ngModel)]="username"
+            name="username"
+            required
+          >
+        </div>
+
+        <div class="mb-3">
+          <label for="email" class="form-label">E-Mail</label>
+          <input
+            type="email"
+            id="email"
+            class="form-control"
+            [(ngModel)]="email"
+            name="email"
+            required
+          >
+        </div>
+
+        <div class="mb-3">
+          <label for="password" class="form-label">Passwort</label>
+          <input
+            type="password"
+            id="password"
+            class="form-control"
+            [(ngModel)]="password"
+            name="password"
+            required
+          >
+        </div>
+
+      </form>
+
+      <div class="text-center mt-3">
+        <button (click)="register()" class="btn btn-success">
+          Registrieren
+        </button>
+      </div>
+
+      <div class="text-center mt-3">
+        <span>
+          Bereits ein Konto?
+          <a routerLink="/login" class="text-decoration-none">
+            Hier anmelden
+          </a>
+        </span>
+      </div>
+
+    </div>
+  </div>
+</div>
