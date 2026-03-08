@@ -24,12 +24,12 @@ Without logging in, users can:
 The application opens directly on the Pokémon list page.
 Authentication is handled using JWT tokens.
 
----
+
 ### Authenticated access
 
 Once logged in, users can access additional features from the navigation menu.
 
----
+
 #### My Pokémons
 
 Users can:
@@ -45,7 +45,7 @@ Users can:
 Important:
 - Pokémon can only be edited or deleted from the My Pokémons page, not from the public Pokémon list.
 
----
+
 #### My Account
 
 Users can manage their account:
@@ -60,7 +60,7 @@ Users can manage their account:
 
 Deleting the account also removes their Pokémon.
 
----
+
 #### Logout
 
 Users can logout by clicking Logout in the navigation menu.
@@ -81,7 +81,7 @@ Users can logout by clicking Logout in the navigation menu.
 
 - HTTP Interceptor (JWT)
 
----
+
 ### Backend
 
 - Java
@@ -123,7 +123,7 @@ C:\payara6\bin\asadmin.bat deploy --contextroot pokemon_backend target\pokemon_b
 http://localhost:8080/pokemon_backend
 ```
 
----
+
 ### Start the Frontend
 
 ```bash
@@ -148,7 +148,7 @@ POST /auth/login
 POST /auth/register
 ```
 
----
+
 ### Protected (JWT required)
 ```bash
 GET /api/me
